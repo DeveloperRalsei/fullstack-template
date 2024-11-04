@@ -5,7 +5,7 @@
     "client:dev": "cd packages/client && npm run dev",
     "client:build": "cd packages/client && npm run build",
     "server:dev": "cd packages/server && npm run dev",
-    "dev": "concurrently \"npm run client:dev*\" \"npm run server:dev\""
+    "dev": "concurrently \"npm run server:dev\" \"npm run client:dev\""
   },
   "workspaces": [
     "packages/*"

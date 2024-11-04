@@ -1,3 +1,1 @@
-export type meow = {
-  ":3": "meow";
-};
+export const serverPort = 3000;
