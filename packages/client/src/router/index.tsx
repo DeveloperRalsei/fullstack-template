@@ -1,25 +1,21 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import AppBase from "./base/AppBase";
-import { Home, Login, Error } from "./pages";
+import { Home, Meow } from "./pages";
 
 export const router = createBrowserRouter([
   {
-    path: "",
-    element: <Login />,
-  },
-  {
-    path: "dashboard",
+    path: "/",
     element: <AppBase />,
     children: [
       {
         path: "",
         element: <Home />,
       },
+      {
+        path: "meow",
+        element: <Meow />,
+      },
     ],
-  },
-  {
-    path: "*",
-    element: <Error />,
   },
 ]);
 
