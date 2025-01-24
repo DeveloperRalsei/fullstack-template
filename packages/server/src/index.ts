@@ -1,18 +1,27 @@
-import express from "express";
-import cors from "cors";
-import { config } from "dotenv";
-config({ path: "../../.env" });
+import { serve } from '@hono/node-server'
+import { Hono } from 'hono'
+import { cors } from 'hono/cors'
+import { logger } from 'hono/logger'
+import { meow } from '@common'
+import { config } from 'dotenv'; config({ path: "../../.env" })
 
-const app = express();
-app.use(express.json());
-app.use(cors());
-import { meow } from "@common";
+const { fetch, ...app } = new Hono()
+app.use(
+    cors(),
+    logger(),
+)
 
-app.get("/meow", (_req, res) => {
-  res.send({ ":3": "meow" } as meow);
-});
+app.get("/meow", async ({ req, ...c }) => {
+    const mreow: meow = {
+        ":3": "meow"
+    }
 
-export const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Server started on port ${PORT} | http://localhost:${PORT}`);
-});
+    return c.json(mreow)
+
+})
+
+const port = process.env.SERVER_PORT || 3000
+serve({
+    fetch,
+    port: Number(port)
+})

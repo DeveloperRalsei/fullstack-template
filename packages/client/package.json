@@ -1,25 +1,29 @@
 {
-  "name": "client",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
-    "preview": "vite preview"
-  },
-  "dependencies": {
-    "@mantine/core": "^7.13.4",
-    "@mantine/hooks": "^7.13.4",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-router-dom": "^6.27.0"
-  },
-  "devDependencies": {
-    "@types/react": "^18.3.3",
-    "@types/react-dom": "^18.3.0",
-    "@vitejs/plugin-react": "^4.3.1",
-    "typescript": "^5.2.2",
-    "vite": "^5.3.4"
-  }
+    "name": "client",
+    "private": true,
+    "version": "0.0.0",
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "tsc -b && vite build",
+        "preview": "vite preview"
+    },
+    "dependencies": {
+        "@mantine/core": "^7.16.1",
+        "@mantine/hooks": "^7.16.1",
+        "@tabler/icons-react": "^2.20.0",
+        "@tanstack/react-query": "^5.64.2",
+        "@tanstack/react-router": "^1.97.14",
+        "react": "^18.3.1",
+        "react-dom": "^18.3.1"
+    },
+    "devDependencies": {
+        "@tanstack/router-devtools": "^1.97.14",
+        "@tanstack/router-plugin": "^1.97.14",
+        "@types/react": "^18.3.3",
+        "@types/react-dom": "^18.3.0",
+        "@vitejs/plugin-react": "^4.3.1",
+        "vite": "^5.3.4",
+        "vite-tsconfig-paths": "^5.1.4"
+    }
 }
