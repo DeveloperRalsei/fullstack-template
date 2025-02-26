@@ -2,11 +2,7 @@
     "compilerOptions": {
         "target": "ESNext",
         "module": "ESNext",
-        "lib": [
-            "DOM",
-            "DOM.Iterable",
-            "ESNext"
-        ],
+        "lib": ["DOM", "DOM.Iterable", "ESNext"],
         "allowJs": true,
         "skipLibCheck": true,
         "esModuleInterop": true,
@@ -15,15 +11,9 @@
         "alwaysStrict": true,
         "baseUrl": ".",
         "paths": {
-            "@common": [
-                "packages/common/src/index"
-            ],
-            "@/*": [
-                "./packages/client/src/*"
-            ],
-            "~/*": [
-                "./packages/server/src/*"
-            ]
+            "#": ["./packages/common/src/index.ts"],
+            "@/*": ["./packages/client/src/*"],
+            "~/*": ["./packages/server/src/*"]
         },
         "moduleResolution": "Node",
         "resolveJsonModule": true,

@@ -14,8 +14,8 @@
         "@tabler/icons-react": "^2.20.0",
         "@tanstack/react-query": "^5.64.2",
         "@tanstack/react-router": "^1.97.14",
-        "react": "^18.3.1",
-        "react-dom": "^18.3.1"
+        "react": "^19.0.0",
+        "react-dom": "^19.0.0"
     },
     "devDependencies": {
         "@tanstack/router-devtools": "^1.97.14",

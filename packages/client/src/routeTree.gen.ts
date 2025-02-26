@@ -13,19 +13,19 @@ import { createFileRoute } from '@tanstack/react-router'
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
+import { Route as MrrImport } from './routes/mrr'
 
 // Create Virtual Routes
 
-const MrrLazyImport = createFileRoute('/mrr')()
 const IndexLazyImport = createFileRoute('/')()
 
 // Create/Update Routes
 
-const MrrLazyRoute = MrrLazyImport.update({
+const MrrRoute = MrrImport.update({
   id: '/mrr',
   path: '/mrr',
   getParentRoute: () => rootRoute,
-} as any).lazy(() => import('./routes/mrr.lazy').then((d) => d.Route))
+} as any)
 
 const IndexLazyRoute = IndexLazyImport.update({
   id: '/',
@@ -48,7 +48,7 @@ declare module '@tanstack/react-router' {
       id: '/mrr'
       path: '/mrr'
       fullPath: '/mrr'
-      preLoaderRoute: typeof MrrLazyImport
+      preLoaderRoute: typeof MrrImport
       parentRoute: typeof rootRoute
     }
   }
@@ -58,18 +58,18 @@ declare module '@tanstack/react-router' {
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexLazyRoute
-  '/mrr': typeof MrrLazyRoute
+  '/mrr': typeof MrrRoute
 }
 
 export interface FileRoutesByTo {
   '/': typeof IndexLazyRoute
-  '/mrr': typeof MrrLazyRoute
+  '/mrr': typeof MrrRoute
 }
 
 export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexLazyRoute
-  '/mrr': typeof MrrLazyRoute
+  '/mrr': typeof MrrRoute
 }
 
 export interface FileRouteTypes {
@@ -83,12 +83,12 @@ export interface FileRouteTypes {
 
 export interface RootRouteChildren {
   IndexLazyRoute: typeof IndexLazyRoute
-  MrrLazyRoute: typeof MrrLazyRoute
+  MrrRoute: typeof MrrRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexLazyRoute: IndexLazyRoute,
-  MrrLazyRoute: MrrLazyRoute,
+  MrrRoute: MrrRoute,
 }
 
 export const routeTree = rootRoute
@@ -109,7 +109,7 @@ export const routeTree = rootRoute
       "filePath": "index.lazy.tsx"
     },
     "/mrr": {
-      "filePath": "mrr.lazy.tsx"
+      "filePath": "mrr.tsx"
     }
   }
 }
