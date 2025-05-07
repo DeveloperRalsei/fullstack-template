@@ -7,6 +7,6 @@ config({ path: "../../.env" });
 
 const app = new Hono();
 app.use(cors(), logger());
-app.route("", meowRoutes);
+app.route("/meow", meowRoutes);
 
 export default app;

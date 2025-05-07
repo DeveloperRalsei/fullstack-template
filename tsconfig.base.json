@@ -1,19 +1,20 @@
 {
     "compilerOptions": {
-        "target": "ESNext",
+        "target": "es2020",
         "module": "ESNext",
         "lib": ["DOM", "DOM.Iterable", "ESNext"],
         "allowJs": true,
         "skipLibCheck": true,
         "esModuleInterop": true,
         "allowSyntheticDefaultImports": true,
+        "resolvePackageJsonImports": true,
         "strict": true,
         "alwaysStrict": true,
         "baseUrl": ".",
         "paths": {
-            "#": ["./packages/common/src/index.ts"],
-            "@/*": ["./packages/client/src/*"],
-            "~/*": ["./packages/server/src/*"]
+            "#": ["./apps/shared/src/index.ts"],
+            "@/*": ["./apps/web/src/*"],
+            "~/*": ["./apps/api/src/*"]
         },
         "moduleResolution": "Node",
         "resolveJsonModule": true,

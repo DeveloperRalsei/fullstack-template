@@ -11,7 +11,6 @@
     "description": "",
     "dependencies": {
         "@hono/node-server": "^1.13.7",
-        "cors": "^2.8.5",
         "dotenv": "^16.4.7",
         "hono": "^4.6.18",
         "tsx": "^4.19.2"
